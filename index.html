@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio de Feedback: Guía Interactiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .nav-link {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .nav-link.active {
+            color: #2563eb; /* blue-600 */
+            font-weight: 700;
+            border-bottom: 2px solid #2563eb; /* blue-600 */
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.45rem;
+            top: 0.5rem;
+            height: 0.8rem;
+            width: 0.8rem;
+            border-radius: 9999px;
+            background-color: #3b82f6; /* blue-500 */
+        }
+    </style>
+</head>
+<body class="bg-blue-50 text-gray-900">
+
+    <!-- Header y Navegación -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600 cursor-pointer">Gimnasio de Feedback</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#pautas" class="nav-link text-gray-600 hover:text-blue-600 pb-1 transition-colors duration-300">Pautas</a>
+                <a href="#guia" class="nav-link text-gray-600 hover:text-blue-600 pb-1 transition-colors duration-300">Guía Práctica</a>
+                <a href="#faq" class="nav-link text-gray-600 hover:text-blue-600 pb-1 transition-colors duration-300">Preguntas Frecuentes</a>
+                <a href="#prueba" class="nav-link text-gray-600 hover:text-blue-600 pb-1 transition-colors duration-300">Prueba Interactiva</a>
+                <a href="#practica" class="nav-link text-gray-600 hover:text-blue-600 pb-1 transition-colors duration-300">Práctica de Role Play</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#pautas" class="nav-link-mobile block py-2 text-gray-600 hover:text-blue-600">Pautas</a>
+            <a href="#guia" class="nav-link-mobile block py-2 text-gray-600 hover:text-blue-600">Guía Práctica</a>
+            <a href="#faq" class="nav-link-mobile block py-2 text-gray-600 hover:text-blue-600">Preguntas Frecuentes</a>
+            <a href="#prueba" class="nav-link-mobile block py-2 text-gray-600 hover:text-blue-600">Prueba Interactiva</a>
+            <a href="#practica" class="nav-link-mobile block py-2 text-gray-600 hover:text-blue-600">Práctica de Role Play</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Sección de Bienvenida -->
+        <section id="inicio" class="text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4">Conviértete en un Maestro de la Retroalimentación</h2>
+            <p class="text-lg text-blue-800 max-w-3xl mx-auto mb-8">La excelencia no es una habilidad, es una actitud. Usa esta guía para transformar la retroalimentación en tu herramienta más poderosa para el crecimiento personal y del equipo.</p>
+            <img src="https://placehold.co/600x400/dbeafe/1e3a8a?text=Conversación+Animada" alt="Dibujo animado de personas conversando" class="mx-auto rounded-xl shadow-lg w-full max-w-2xl">
+        </section>
+
+        <!-- Sección Pautas -->
+        <section id="pautas" class="hidden">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Pautas para una Retroalimentación que Impulsa</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">1. Regular y Oportuna</h3>
+                    <p class="text-gray-700">La retroalimentación pierde impacto con el tiempo. Proporciónala de forma continua y cercana al evento para que sea relevante y fácil de recordar. Establece chequeos semanales para mantener la comunicación fluida.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">2. Específica y Accionable</h3>
+                    <p class="text-gray-700">Evita la ambigüedad. Describe la situación concreta (cuándo, dónde, quién) y sugiere pasos claros para mejorar. Define cómo se ve el éxito para que el camino a seguir sea evidente.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">3. Refuerza lo Positivo con Aprobación Social</h3>
+                    <p class="text-gray-700">No te centres solo en lo negativo. Reconocer y agradecer un buen desempeño establece un estándar positivo y motiva a mantenerlo. Distingue claramente los aciertos de las áreas de mejora.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-bold mb-3 text-blue-700">4. Enfócate en el Crecimiento, no en el Fracaso</h3>
+                    <p class="text-gray-700">Aborda las áreas de mejora desde una perspectiva de desarrollo profesional. Mantén un tono productivo y fomenta una mentalidad de crecimiento para evitar que la persona se ponga a la defensiva.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Guía Práctica -->
+        <section id="guia" class="hidden">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Guía Práctica para tus Sesiones</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative border-l-4 border-blue-200 pl-10">
+                    <div class="mb-12">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-lg text-blue-800">Paso 1: Fomenta la Propiedad (Antes de la sesión)</h4>
+                        <p class="text-gray-700">Antes de dar tu feedback, pregunta al receptor: "¿Qué crees que hiciste bien?" y "¿Qué podrías mejorar?". Esto le da control sobre su propio desarrollo y abre la puerta a una conversación constructiva.</p>
+                    </div>
+                     <div class="mb-12">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-lg text-blue-800">Paso 2: Estructura la Conversación</h4>
+                        <p class="text-gray-700">Separa la retroalimentación positiva de las áreas de mejora. Esto ayuda a procesar cada punto con claridad. Puedes usar el "sándwich de feedback" (positivo-mejora-positivo) para terminar en una nota constructiva y motivadora.</p>
+                    </div>
+                     <div class="mb-12">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-lg text-blue-800">Paso 3: Encuentra el "Punto Dulce" (Radical Candor™)</h4>
+                        <p class="text-gray-700">El equilibrio perfecto se encuentra al "cuidar personalmente" y "desafiar directamente". Muestra un interés genuino por la persona, pero sé lo suficientemente directo para impulsar su crecimiento. La empatía y la claridad son tus mejores aliadas.</p>
+                    </div>
+                     <div>
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-lg text-blue-800">Paso 4: Define los Próximos Pasos</h4>
+                        <p class="text-gray-700">La sesión no termina sin un plan. Acuerden acciones concretas, establezcan un cronograma para revisar el progreso y asegúrate de que el receptor se sienta apoyado y con un camino claro a seguir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección FAQ -->
+        <section id="faq" class="hidden">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Preguntas Frecuentes</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="accordion-item bg-white rounded-lg shadow-md">
+                    <button class="accordion-header w-full text-left p-5 font-semibold text-blue-800 flex justify-between items-center">
+                        ¿Qué hace que la retroalimentación sea efectiva?
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5 pb-5 text-gray-700">
+                        <p>Debe ser regular, oportuna, específica, accionable, reforzar lo positivo y enfocarse siempre en el crecimiento profesional, no en el fracaso personal.</p>
+                    </div>
+                </div>
+                <div class="accordion-item bg-white rounded-lg shadow-md">
+                    <button class="accordion-header w-full text-left p-5 font-semibold text-blue-800 flex justify-between items-center">
+                        ¿Cómo evito que la retroalimentación suene muy personal?
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5 pb-5 text-gray-700">
+                        <p>Evita comentarios sobre aspectos físicos (ropa, voz, etc.). Céntrate en comportamientos observables y vincula siempre tu feedback a las prioridades y objetivos del equipo o la organización.</p>
+                    </div>
+                </div>
+                <div class="accordion-item bg-white rounded-lg shadow-md">
+                    <button class="accordion-header w-full text-left p-5 font-semibold text-blue-800 flex justify-between items-center">
+                        ¿Es mejor dar feedback positivo y negativo por separado?
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content px-5 pb-5 text-gray-700">
+                        <p>Sí, generalmente se recomienda separarlos para que el cerebro procese mejor cada mensaje. El "sándwich de feedback" es una técnica útil para estructurar la conversación, terminando con una nota positiva.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Prueba Interactiva -->
+        <section id="prueba" class="hidden">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Pon a Prueba tu Conocimiento</h2>
+            <div id="quiz-container" class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                <!-- Las preguntas del quiz se cargarán aquí -->
+            </div>
+            <div id="quiz-results" class="hidden max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg text-center">
+                <h3 class="text-2xl font-bold mb-4 text-blue-900">Resultados</h3>
+                <p id="score-text" class="text-lg mb-4 text-gray-800"></p>
+                <button id="restart-quiz-btn" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105">Intentar de Nuevo</button>
+            </div>
+        </section>
+
+        <!-- Sección Práctica de Role Play -->
+        <section id="practica" class="hidden">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">¡Hora de Practicar! Simulador de Role Play</h2>
+            <div id="role-play-container" class="max-w-4xl mx-auto space-y-8">
+                <!-- Los escenarios de role play se cargarán aquí -->
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Navegación móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Acordeón para FAQ
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('svg');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+                    document.querySelectorAll('.accordion-header svg').forEach(i => i.style.transform = 'rotate(0deg)');
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Lógica del Quiz
+        const quizContainer = document.getElementById('quiz-container');
+        const quizResultsContainer = document.getElementById('quiz-results');
+        const scoreText = document.getElementById('score-text');
+        const restartQuizBtn = document.getElementById('restart-quiz-btn');
+
+        const quizQuestions = [
+            {
+                question: "Un colega llega 5 minutos tarde a las reuniones semanales. ¿Cuál es la forma MÁS efectiva de darle feedback?",
+                answers: [
+                    { text: "Ineficaz: 'Necesitas ser más puntual.'", correct: false },
+                    { text: "Eficaz: 'Noté que has llegado tarde a nuestras últimas reuniones. ¿Hay algo que te lo impida? Es importante empezar a tiempo.'", correct: true },
+                    { text: "Ineficaz: 'Tu impuntualidad es una falta de respeto para todos.'", correct: false }
+                ],
+                explanation: "La opción eficaz es específica, se enfoca en el comportamiento observable y abre un diálogo en lugar de acusar, alineándose con el principio de 'enfocarse en el crecimiento'."
+            },
+            {
+                question: "Al dar feedback, ¿por qué es importante separar los puntos positivos de las áreas de mejora?",
+                answers: [
+                    { text: "Para que la conversación sea más corta.", correct: false },
+                    { text: "Para que la persona no se sienta tan mal.", correct: false },
+                    { text: "Para permitir un procesamiento más claro de las fortalezas y las áreas a desarrollar.", correct: true }
+                ],
+                explanation: "Separar los temas ayuda a que el cerebro procese cada punto de forma independiente, evitando que un mensaje opaque al otro y facilitando la creación de un plan de acción claro."
+            },
+            {
+                question: "¿Qué significa el principio de 'Radical Candor'?",
+                answers: [
+                    { text: "Ser brutalmente honesto sin importar los sentimientos.", correct: false },
+                    { text: "Cuidar personalmente a la persona y al mismo tiempo desafiarla directamente para que crezca.", correct: true },
+                    { text: "Solo dar retroalimentación positiva para mantener la moral alta.", correct: false }
+                ],
+                explanation: "Radical Candor es el equilibrio entre la empatía (cuidar personalmente) y la honestidad directa (desafiar directamente), creando un ambiente de confianza y crecimiento."
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            quizContainer.innerHTML = '';
+            quizContainer.style.display = 'block';
+            quizResultsContainer.style.display = 'none';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const questionData = quizQuestions[currentQuestionIndex];
+            quizContainer.innerHTML = `
+                <div class="mb-6">
+                    <p class="text-lg font-semibold text-blue-900">${currentQuestionIndex + 1}. ${questionData.question}</p>
+                </div>
+                <div class="space-y-4">
+                    ${questionData.answers.map((answer, index) => `
+                        <button class="answer-btn block w-full text-left bg-blue-100 p-4 rounded-lg hover:bg-blue-200 transition-colors duration-200" data-correct="${answer.correct}">
+                            ${answer.text}
+                        </button>
+                    `).join('')}
+                </div>
+                <div id="feedback-message" class="mt-6"></div>
+            `;
+
+            document.querySelectorAll('.answer-btn').forEach(button => {
+                button.addEventListener('click', selectAnswer);
+            });
+        }
+
+        function selectAnswer(e) {
+            const selectedButton = e.currentTarget;
+            const isCorrect = selectedButton.dataset.correct === 'true';
+            const feedbackMessage = document.getElementById('feedback-message');
+
+            document.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.disabled = true;
+                if (btn.dataset.correct === 'true') {
+                    btn.classList.remove('bg-blue-100', 'hover:bg-blue-200');
+                    btn.classList.add('bg-green-200', 'border-green-500');
+                } else {
+                    btn.classList.remove('bg-blue-100', 'hover:bg-blue-200');
+                    btn.classList.add('bg-red-200', 'border-red-500');
+                }
+            });
+
+            if (isCorrect) {
+                score++;
+                feedbackMessage.innerHTML = `<p class="text-green-700 font-bold">¡Correcto!</p><p class="text-sm mt-2 text-gray-700">${quizQuestions[currentQuestionIndex].explanation}</p>`;
+            } else {
+                feedbackMessage.innerHTML = `<p class="text-red-700 font-bold">Incorrecto.</p><p class="text-sm mt-2 text-gray-700">${quizQuestions[currentQuestionIndex].explanation}</p>`;
+            }
+            
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizQuestions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }, 4000);
+        }
+
+        function showResults() {
+            quizContainer.style.display = 'none';
+            quizResultsContainer.style.display = 'block';
+            scoreText.textContent = `Tu puntuación: ${score} de ${quizQuestions.length}`;
+        }
+
+        restartQuizBtn.addEventListener('click', loadQuiz);
+        loadQuiz();
+
+        // Lógica del Role Play
+        const rolePlayContainer = document.getElementById('role-play-container');
+        const scenarios = [
+            {
+                title: "Escenario 1: Presentación poco preparada",
+                situation: "Un miembro de tu equipo hace una presentación importante para un socio, pero es evidente que no se preparó lo suficiente. Duda, no puede responder preguntas básicas y la información está desorganizada.",
+                ineffective: "Ineficaz: 'Tu presentación fue un desastre. Parecías no tener idea de lo que hablabas.'",
+                effectiveSuggestion: "Sugerencia Eficaz: 'Aprecio que te hayas ofrecido a liderar la presentación. Noté que en algunos momentos parecías inseguro con las preguntas del socio. La última vez que hiciste esta presentación, la clavaste. ¿Qué fue diferente esta vez? Para la próxima, ¿qué te parece si dedicamos una hora antes para repasar los puntos clave juntos?'"
+            },
+            {
+                title: "Escenario 2: Tono negativo en la comunicación",
+                situation: "Un colega responde a los correos electrónicos del equipo con un tono que a menudo parece cortante o negativo, lo que está afectando la moral del equipo.",
+                ineffective: "Ineficaz: 'Necesitas cambiar tu actitud. Siempre suenas enojado por correo.'",
+                effectiveSuggestion: "Sugerencia Eficaz: 'Quería comentarte algo que he notado. A veces, la forma en que están redactados tus correos puede interpretarse como si estuvieras molesto, como en el email sobre el proyecto X. Sé que probablemente no es tu intención, pero quería hacértelo saber por si no eras consciente del impacto. ¿Podemos hablar de ello?'"
+            }
+        ];
+
+        scenarios.forEach((scenario, index) => {
+            const scenarioEl = document.createElement('div');
+            scenarioEl.className = 'bg-white p-6 rounded-xl shadow-lg';
+            scenarioEl.innerHTML = `
+                <h4 class="font-bold text-xl mb-3 text-blue-800">${scenario.title}</h4>
+                <p class="mb-4 text-gray-700"><strong>Situación:</strong> ${scenario.situation}</p>
+                <p class="mb-4 text-red-600 italic"><em>${scenario.ineffective}</em></p>
+                <div class="mb-4">
+                    <label for="role-play-input-${index}" class="block font-semibold mb-2 text-gray-800">Escribe aquí tu retroalimentación efectiva:</label>
+                    <textarea id="role-play-input-${index}" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" rows="4"></textarea>
+                </div>
+                <button class="show-suggestion-btn bg-blue-200 text-blue-800 font-semibold py-2 px-4 rounded-lg hover:bg-blue-300 transition">Mostrar Sugerencia</button>
+                <div class="suggestion-text hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+                    <p>${scenario.effectiveSuggestion}</p>
+                </div>
+            `;
+            rolePlayContainer.appendChild(scenarioEl);
+        });
+
+        document.querySelectorAll('.show-suggestion-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const suggestion = e.currentTarget.nextElementSibling;
+                suggestion.classList.toggle('hidden');
+            });
+        });
+
+        // Lógica de Navegación por Pestañas
+        const sections = document.querySelectorAll('main > section');
+        const navLinks = document.querySelectorAll('header .nav-link');
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+        const homeLink = document.querySelector('header h1');
+
+        function showSection(targetId) {
+            // Oculta todas las secciones
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Muestra la sección objetivo
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+
+            // Actualiza el estado activo en el menú de escritorio
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${targetId}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Si es la sección de inicio, desactiva todos los links
+            if (targetId === 'inicio') {
+                 navLinks.forEach(link => link.classList.remove('active'));
+            }
+        }
+
+        function handleNavClick(e) {
+            e.preventDefault();
+            const targetId = e.currentTarget.getAttribute('href').substring(1);
+            showSection(targetId);
+        }
+        
+        homeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSection('inicio');
+        });
+
+        function handleMobileNavClick(e) {
+            e.preventDefault();
+            const targetId = e.currentTarget.getAttribute('href').substring(1);
+            showSection(targetId);
+            mobileMenu.classList.add('hidden'); // Cierra el menú móvil al hacer clic
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', handleNavClick);
+        });
+        
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', handleMobileNavClick);
+        });
+
+        // Muestra la sección de inicio por defecto
+        showSection('inicio');
+
+    });
+    </script>
+</body>
+</html>
